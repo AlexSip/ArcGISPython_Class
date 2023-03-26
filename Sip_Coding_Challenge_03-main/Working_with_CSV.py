@@ -6,7 +6,7 @@ CO2_values = []
 
 # Minimum / Maximum / Mean Values:
 
-with open("C:\Sip_EVS528\Sip_CodingChallenge_03\co2-ppm-daily_csv.csv") as CO2:
+with open("co2-ppm-daily_csv.csv") as CO2:
     csv_reader = csv.reader(CO2, delimiter=',')
     line_counter = 0
     header_skip = next(CO2)
@@ -32,7 +32,7 @@ years_dict = {}
 
 for year in years:
     years_list = []
-    with open("C:\Sip_EVS528\Sip_CodingChallenge_03\co2-ppm-daily_csv.csv") as CO2:
+    with open("co2-ppm-daily_csv.csv") as CO2:
         csv_reader = csv.reader(CO2, delimiter=',')
         header_skip = next(CO2)
 
@@ -52,7 +52,7 @@ summer_list = []
 autumn_list = []
 winter_list = []
 
-with open("C:\Sip_EVS528\Sip_CodingChallenge_03\co2-ppm-daily_csv.csv") as CO2:
+with open("co2-ppm-daily_csv.csv") as CO2:
     csv_reader = csv.reader(CO2, delimiter=',')
     header_skip = next(CO2)
 
