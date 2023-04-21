@@ -1,7 +1,7 @@
 import arcpy
 arcpy.env.overwriteOutput = True
-arcpy.env.workspace = r'C:\Sip_EVS528\Sip_Coding_Challenge_09-main\RI_Data'
-input_shp = r'C:\Sip_EVS528\Sip_Coding_Challenge_09-main\RI_Data\RI_Forest_Health_Works_Project%3A_Points_All_Invasives.shp'
+arcpy.env.workspace = r'C:\Data\Students_2023\Sip\Sip_Coding_Challenge_09-main\RI_Data'
+input_shp = r'RI_Forest_Health_Works_Project%3A_Points_All_Invasives.shp' # AD Change this to just a file name rather than a path.
 
 # Count how many individual records have photos
 fields = ['PHOTO', 'Other']
@@ -23,7 +23,7 @@ print("There are " + str(count - 1) + " individual records with photos, for the"
 in_layer_or_view = input_shp
 selection_type = "NEW SELECTION"
 where_clause = "Other = 'Photo' Or Other = 'Photos' Or Other = 'PHOTO'"
-lyr = arcpy.management.SelectLayerByAttribute(in_layer_or_view, selection_type, where_clause)
+lyr = arcpy.management.SelectLayerByAttribute(in_layer_or_view, selection_type, where_clause) #OK, but don't forget you can also use searchCursors as well.
 cpy_lyr = 'RI_FHWP_invasives_pts_yesPhotos.shp'
 arcpy.CopyFeatures_management(lyr, cpy_lyr)
 
